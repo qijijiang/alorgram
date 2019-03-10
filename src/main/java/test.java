@@ -1,33 +1,37 @@
 
-import java.util.Arrays;
+import java.util.*;
 
-public class test {
-    public static void main(String[] args) {
-        String data[]=new String[]{"1 2 3","2 3 4"};
-//        String data1[]=new String[data.length];
-        
-//        data1=compare(data);
-
-
-        System.out.println(data);
-
-    }
-    public static String[] compare(String[] data) {
-        for(int i=0;i<data.length;i++){
-            String[] temp= data[i].split(" ");
-            if(temp.length!=3){
-                return null;
-            }else{
-
-            int  x=Integer.parseInt(temp[0])+Integer.parseInt(temp[1]);
-           int  y=Integer.valueOf(temp[2]);
-           if(x>y){
-                data[i]="Case #"+(i+1)+" true";
+public class test
+{
+    public static void main(String args[])
+    {
+        Scanner cin = new Scanner(System.in);
+        int[] a=new int[2];
+        int i=0;
+       // int a1=cin.nextInt();
+        while(cin.hasNext()){
+            a[i++]=cin.nextInt();
+            if(i==a.length){
+                break;
+            }
         }
-        else{
-               data[i]="Case #"+(i+1)+" false";
-           }
-        }}
-        return data;
+        System.out.println(Arrays.toString(a));
+        int[] b=new int[a[0]];
+        int j=0;
+        while(cin.hasNext()){
+            b[j++]=cin.nextInt();
+            if(j==b.length){
+                break;
+            }
+        }
+        Arrays.sort(b);
+        int index=a[1]*2-a[0];
+        if(a[1]>=a[0]||a[1]*2<a[0]){
+            System.out.println(0);}
+        if(b.length==1){
+            System.out.println(b[0]);
+        }else{
+            System.out.println(b[0]+b[b.length-1-index]);
+        }
     }
 }

@@ -12,17 +12,19 @@ public class HeapSort {
 //        循环调整为大理堆
         int start=(arr.length-1)/2;
         for(int i=start;i>=0;i--){
-            maxHeap(arr,arr.length,i);}
+            maxHeap(arr,arr.length,i);
+        }
 //            先把数组的0个数和堆中的最后一个数交换位置，再把前面的调整为大理堆；
         for(int i=arr.length-1;i>0;i--){
             int temp=arr[0];
             arr[0]=arr[i];
             arr[i]=temp;
             maxHeap(arr,i,0);
-
+            System.out.println(Arrays.toString(arr));
     }}
     public static void maxHeap(int[] arr,int size, int index){
 //        左子节点
+
         int leftNode=2*index+1;
 //        右子节点
         int rightNode=2*index+2;

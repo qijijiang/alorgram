@@ -4,11 +4,11 @@ import java.util.Arrays;
 
 public class QuickSort {
     public static void main(String[] args) {
-        int[] b = new int[]{5, 4, 1, 2, 3, 5, 6, 8, 9, 6, 5, 6, 7, 1, 3, 4, 3, 535, 25, 2};
+        int[] b = new int[]{9,1,3,8,23,5,7,10,29,19};
         quickSort(b, 0, b.length - 1);
         System.out.println(Arrays.toString(b));
-        fastSort(b, 0, b.length - 1);
-        System.out.println(Arrays.toString(b));
+//        fastSort(b, 0, b.length - 1);
+//        System.out.println(Arrays.toString(b));
     }
     public static void quickSort(int[] arr,int start,int end) {
         if (start < end) {
@@ -23,9 +23,13 @@ public class QuickSort {
                 while (low < high && arr[low] <= stard) {
                     low++;
                 }
+//                int temp=arr[high];
+//                arr[high]=arr[low];
+//                arr[low]=temp;
                 arr[high] = arr[low];
             }
             arr[low] = stard;
+            System.out.println(Arrays.toString(arr));
             quickSort(arr, start, low);
             quickSort(arr, low + 1, end);
         }
