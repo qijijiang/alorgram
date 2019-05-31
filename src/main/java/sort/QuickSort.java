@@ -12,26 +12,23 @@ public class QuickSort {
     }
     public static void quickSort(int[] arr,int start,int end) {
         if (start < end) {
-            int stard = arr[start];
+            int stard = arr[end];
             int low = start;
             int high = end;
             while (low < high) {
-                while (low < high && stard <= arr[high]) {
+                while (low < high && arr[low] >= stard) {
+                    low++;
+                }
+                arr[high] = arr[low];
+                while (low < high && stard >= arr[high]) {
                     high--;
                 }
                 arr[low] = arr[high];
-                while (low < high && arr[low] <= stard) {
-                    low++;
-                }
-//                int temp=arr[high];
-//                arr[high]=arr[low];
-//                arr[low]=temp;
-                arr[high] = arr[low];
             }
-            arr[low] = stard;
+            arr[high] = stard;
             System.out.println(Arrays.toString(arr));
-            quickSort(arr, start, low);
-            quickSort(arr, low + 1, end);
+            quickSort(arr, start, high-1);
+            quickSort(arr, high , end);
         }
     }
     public static void fastSort(int[] arr,int start ,int end){

@@ -1,7 +1,6 @@
 package sort;
 
 import java.util.Arrays;
-
 public class Bubble {
     public static void main(String[] args) {
         int[] b=new int[]{5,4,1,2,3,5,6,8,9,6,5,6,7,1,3,4,3,535,25,2};

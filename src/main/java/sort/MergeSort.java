@@ -7,14 +7,15 @@ public class MergeSort {
         int[] b=new int[]{5,4,1,2,3,5,6,8,9,6,5,6,7,1,3,4,3,535,25,2};
         MergeSort(b,0,b.length-1);
         System.out.println(Arrays.toString(b));
-    }
+       }
     public static void MergeSort(int[] arr,int low,int high){
         if(low<high){
         int middle=(high+low)/2;
         MergeSort(arr,low,middle);
         MergeSort(arr,middle+1,high);
         Merge(arr,low,middle,high);
-    }}
+    }
+    }
     public static void Merge(int[] arr,int low,int middle,int high){
         int i=low;
         int j=middle+1;
